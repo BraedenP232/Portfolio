@@ -76,22 +76,6 @@
     }
 }
 
-.theme-btn {
-    width: 3em;
-    height: 3em;
-    padding: 0.5em;
-    border-radius: 50%;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-  }
-   
-  .theme-btn img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
 html {
     overflow: hidden;
     height: 100%;
@@ -188,6 +172,12 @@ body {
     }
     .backgroundimg {
         visibility: visible;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 812px) {
+    .backgroundimg {
+        visibility: hidden;
     }
 }
 
@@ -448,8 +438,9 @@ body {
 }
 
 .footer {
-    margin-left: 19em;
-    margin-right: 19em;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 3em;
     background-color: var(--alt-color);
     color: #fff;
