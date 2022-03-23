@@ -80,7 +80,14 @@
     color-scheme: light dark;
 }
 
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
 body {
+    overflow: auto;
+    height: 100%;
     color: var(--color);
     background-color: var(--background-color);
     margin: 0;
