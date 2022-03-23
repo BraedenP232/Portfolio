@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Software Engineer</title>
+    <script>
+        // If `prefers-color-scheme` is not supported, fall back to light mode.
+        // In this case, light.css will be downloaded with `highest` priority.
+        if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+          document.documentElement.style.display = 'none';
+          document.head.insertAdjacentHTML(
+            'beforeend',
+            '<link rel="stylesheet" href="css/light.css" onload="document.documentElement.style.display = \'\'">',
+          );
+        }
+      </script>
+      <!--
+        Conditionally either load the light or the dark stylesheet. The matching file
+        will be downloaded with `highest`, the non-matching file with `lowest`
+        priority. If the browser doesn't support `prefers-color-scheme`, the media
+        query is unknown and the files are downloaded with `lowest` priority (but
+        above I already force `highest` priority for my default light experience).
+      -->
+      <link rel="stylesheet" href="css/dark.css" media="(prefers-color-scheme: dark)" />
+      <link
+        rel="stylesheet"
+        href="css/light.css"
+        media="(prefers-color-scheme: light)"
+      />
+      <!-- The main stylesheet -->
+    <link href="css/index.css" rel="stylesheet">
+    <link href="lib/fontello/css/fontello.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header-container">
+    </header>
+    <main>
+        <div class="container">
+            <div class="lead">
+                <h1 class="lead__heading">Hi, I'm Braeden Pelletier</h1>
+                <div class="lead__sub">
+                    I am a college graduate from CDI College, I took Web and Mobile Applications Development. I enjoy building everything from small business sites to rich interactive web apps to computer software.
+                </div>
+
+                <div class="call-to-action">
+                    <a href="resume.pdf" target="_blank" class="btn btn--primary btn--lg">Download My Resume</a>
+
+                    <div class="socials">
+                        <a class="socials__link" href="https://github.com/BraedenP232" target="_blank">
+                            <i class="icon-github-circled"></i>
+                        </a>
+                        <a class="socials__link" href="mailto:braedenp232@gmail.com" target="_blank">
+                            <i class="icon-mail-alt"></i>
+                        </a>
+                        <a class="socials__link" href="https://dribbble.com/braedenp232" target="_blank">
+                            <i class="icon-dribbble"></i>
+                        </a>
+                        <a class="socials__link" href="https://www.linkedin.com/in/braeden-pelletier232/" target="_blank">
+                            <i class="icon-linkedin-squared"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container experience-container">
+            <h1>Experience</h1>
+            <div class="timeline">
+                <div class="timeline__line"></div>
+                <div class="timeline__item">
+                    <div class="experience">
+                        <header class="experience__header">November 2021 - March 25, 2022</header>
+                        <h2 class="experience__name">
+                            Web and Mobile Applications Development Diploma at CDI College
+                        </h2>
+                        <div class="skill-tags">
+                        </div>
+                        <p>Studied and learned a plethora of programming languages</p>
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container project-container">
+            <h1>My Projects</h1>
+            <div class="project">
+                <div class="project__img-container">
+                    <img class="project__img" src="img/TextGameCatGif.gif" alt="Cat Text Game Gif">
+                </div>
+                <div class="project__details">
+                    <h2 class="project__name">
+                        Catventure
+                    </h2>
+                    <div class="skill-tags">
+                        <div class="skill-tag">Python</div>
+                        <div class="skill-tag">Made in PyCharm</div>
+                    </div>
+                    <p>
+                        Catventure is a cute little text adventure game with simple flashy graphics limited to a console format.
+                        <div>
+                            <a class="btn" href="https://github.com/BraedenP232/pythontextgame" target="_blank">View Project</a>
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-container">
+                    <img class="project__img" src="img/TimelineRecordingGif.gif" alt="Timeline Website Gif">
+                </div>
+                <div class="project__details">
+                    <h2 class="project__name">
+                        Timeline Project
+                    </h2>
+                    <div class="skill-tags">
+                        <div class="skill-tag">HTML</div>
+                        <div class="skill-tag">CSS</div>
+                        <div class="skill-tag">jQuery</div>
+                    </div>
+                    <p>
+                        This timeline project is a responsive dynamic website showcasing some sleek Javascript functions.
+                        <div>
+                            <a class="btn" href="https://braedenp232.github.io/responsive-timeline-website/" target="_blank">View Project</a>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- <h2>Testimonials</h2>
+            <blockquote class="testimonial">
+                <p>“Incredibly talented and hardworking. A super friendly guy who is a frequent communicator”</p>
+                <cite title="Person Name">
+        Person Name
+          (CEO at Company)
+      </cite>
+            </blockquote>
+            <blockquote class="testimonial">
+                <p>“Wow, thank you for this, you probably have the most intuitive explanation for this problem!”</p>
+                <cite title="Person Name">
+        Person Name
+      </cite> -->
+            </blockquote>
+            <div class='contact'>
+                <h2>Contact</h2>
+                <p class='contact__msg'>I'm currently available for freelance projects or full-time work. If you're interested in working with me, please get in touch through <a href='mailto:braedenp232@gmail.com'>braedenp232@gmail.com</a>.
+            </div>
+        </div>
+    </main>
+    <footer class='footer'>
+        <h1 class='footer__name'>Braeden Pelletier</h1>
+        <h2 class='footer__title'>Software Engineer</h2>
+        Copyright © Braeden Pelletier
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
