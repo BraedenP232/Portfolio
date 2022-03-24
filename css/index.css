@@ -85,6 +85,7 @@ body {
     -webkit-appearance: none;
     overflow: auto;
     height: 100%;
+    width: 100%;
     color: var(--color);
     margin: 0;
     padding: 0;
@@ -92,6 +93,7 @@ body {
     vertical-align: baseline;
     background: var(--gradient);
     background-size: 400% 400%;
+    -webkit-animation: gradient 15s ease infinite;
     animation: gradient 15s ease infinite;
     height: 100vh;
     transition: all .6s;
@@ -147,18 +149,25 @@ body {
     padding: 18px 26px
 }
 
+.helpers {
+    position: relative;
+    width: 100%;
+}
+
 .distract {
     color: var(--color);
-    position: absolute;
-    z-index: 200;
-    margin: -35px 69%;
+    position: -webkit-relative; /* Safari */
+    position: relative;
+    margin: 0px 60%;
     background-color: rgb(117, 78, 153);
 }
 .distract:hover span {
-    display: none
+    display: none;
 }
 .distract:hover:before {
-    content: "Background too distracting? Click me."
+    content: "Background too distracting? Click me.";
+    display: flex;
+    
 }
 
 @media (min-width: 768px) {
@@ -194,21 +203,12 @@ body {
 }
 
 .lead {
-    padding: 30px 0 100px
+    padding: 0px 0 100px
 }
 
 @media (min-width: 768px) {
     .lead {
-        padding: 115px 0
-    }
-    .backgroundimg {
-        visibility: visible;
-    }
-}
-
-@media (min-width: 375px) and (max-width: 812px) {
-    .backgroundimg {
-        visibility: hidden;
+        padding: 50px 0
     }
 }
 
@@ -275,7 +275,9 @@ body {
            remains flat, we must make the bottom right
            corner of the left ear square. */
     border-bottom-right-radius: 0;
+    -webkit-transition: all .6s;
     transition: all .6s;
+
 }
 
 .infographic::after {
@@ -288,6 +290,7 @@ body {
            remains flat, we must make the bottom left
            corner of the right ear square. */
     border-bottom-left-radius: 0;
+    -webkit-transition: all .6s;
     transition: all .6s;
 }
 
@@ -301,6 +304,7 @@ body {
 }
 
 .infographic:hover article2 {
+    -webkit-transition: all .6s;
     transition: all .6s;
     margin-bottom: 100px;
 }
@@ -309,6 +313,7 @@ body {
     background-color: rgb(68, 68, 68);
     border-width: 0;
     width: 70px;
+    -webkit-transform: translateY(50px);
     transform: translateY(50px);
     margin-right: 70px;
     border-top-right-radius: 0;
@@ -319,6 +324,7 @@ body {
     background-color: rgb(68, 68, 68);
     border-width: 0;
     width: 65px;
+    -webkit-transform: translateY(50px);
     transform: translateY(50px);
     margin-left: 88px;
     border-top-right-radius: 0;
@@ -328,38 +334,37 @@ body {
 .infographic article {
     color: var(--color);
     font-size: 22px;
+    -webkit-position: absolute;
     position: absolute;
     margin: -115px -78px;
 }
 
 .infographic article2 {
     font-size: 22px;
+    -webkit-position: absolute;
     position: absolute;
     margin: -15px -35px;
 }
 
 @media (min-width: 460px) {
     .lead__heading {
-        font-size: 55px
+        font-size: 55px;
+        margin-top: 0;
     }
-    .header-img {
-        visibility: hidden;
-        margin: auto;
-        width: 15em;
-        height: 15em;
+}
+
+@media (min-width: 300px) {
+    .profile {
+        margin: 0 0 0 0 ;
+        height: 150px;
+        width: 150px;
+        background: rgba(0,0,0,.4);
         position: relative;
-        margin-bottom: -6em;
     }
-    .backgroundimg {
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        visibility: hidden;
-        height: auto;
-        width: 100%;
-        position: fixed;
-        z-index: -10;
+    .profile img {
+        height: 150px;
+        width: 150px;
+        position: relative;
     }
 }
 
@@ -391,18 +396,34 @@ body {
     margin-bottom: 30px;
     text-align: center
 }
+@media (min-width: 900px) {
+    .profile {
+        height: 200px;
+        width: 200px;
+        background: rgba(0,0,0,.4);
+        position: relative;
+    }
+    .profile img {
+        height: 200px;
+        width: 200px;
+        position: relative;
+    }
+}
 
 @media (min-width: 768px) {
     .project {
         text-align: left
     }
-    .header-img {
-        margin: auto;
-        visibility: visible;
-        margin-bottom: -10em;
+    .profile {
+        height: 200px;
+        width: 200px;
+        margin: 0px 0 0 0;
+        position: relative;
     }
-    .backgroundimg {
-        visibility: visible;
+    .profile img {
+        height: 200px;
+        width: 200px;
+        position: absolute;
     }
 }
 
