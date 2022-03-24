@@ -24,6 +24,7 @@ element.addEventListener("click", () => {
             '<link rel="stylesheet" href="css/dark.css" onload="document.documentElement.style.display = \'\'">',
             // toggle variable because user's device will still be in light mode
             isdark = true
+            
           );
           }
         
@@ -35,11 +36,25 @@ element.addEventListener("click", () => {
 // Function to set background to constant color due to distraction
 // Color still varies by dark/light mode
 const btn = document.getElementById('distraction')
+var toggled = false;
 btn.addEventListener('click', function onClick(event) {
-    // 👇️ change background color
-    document.body.style.background = 'var(--background-color)';
-  
-    // 👇️ optionally change text color
-    // document.body.style.color = 'white';
-    btn.style.display = 'none';
+  if (!toggled) {
+     // 👇️ change background color
+     document.body.style = '-webkit-transition: --background-color 1000ms linear;-ms-transition: --background-color 1000ms linear;transition: --background-color 1000ms linear;'
+     document.body.style.background = 'var(--background-color)';
+    
+     // 👇️ optionally change text color
+     // document.body.style.color = 'white';
+
+     // boolean variable set to true for toggling simple background
+     toggled = true
+    //  btn.style.display = 'none';
+  } else {
+    // toggle back to animated gradient.
+    document.body.style.background = 'var(--gradient)';
+    document.body.style = 'animation: gradient 15s ease infinite;'
+
+    // boolean variable set to true for toggling simple background
+    toggled = false
+  }
   });

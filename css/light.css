@@ -1,6 +1,8 @@
 /* light.css: 👉 dark-on-light */
 :root {
     --color: rgb(5, 5, 5);
+    --bulb-color: rgb(250, 250, 58);
+    --shine-color: rgb(250, 250, 58);
     --background-color: rgb(250, 250, 250);
     --link-color: rgb(105, 176, 218);
     --main-headline-color: rgb(0, 0, 192);
@@ -8,5 +10,6 @@
     --accent-color: rgb(250, 250, 250);
     --alt-color: rgb(50, 50, 50);
     --infographic-color: rgb(44, 80, 107);
+    --dark-color: rgb(60, 60, 60);
     --gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   }
