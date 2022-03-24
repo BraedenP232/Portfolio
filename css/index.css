@@ -85,11 +85,27 @@ body {
     overflow: auto;
     height: 100%;
     color: var(--color);
-    background-color: var(--background-color);
     margin: 0;
     padding: 0;
     border: 0;
-    vertical-align: baseline
+    vertical-align: baseline;
+    background: var(--gradient);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    transition: all .6s;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 * {
@@ -128,6 +144,21 @@ body {
 
 .btn--lg {
     padding: 18px 26px
+}
+
+.distract {
+    color: var(--color);
+    position: fixed;
+    margin: 15px 69%;
+    background-color: rgb(117, 78, 153);
+}
+
+.distract:hover span {
+    display: none
+}
+
+.distract:hover:before {
+    content: "Background too distracting? Click me."
 }
 
 @media (min-width: 768px) {
@@ -187,6 +218,118 @@ body {
     font-size: 40px
 }
 
+.infographic {
+    text-align: center;
+    color: var(--accent-color);
+    /* Same trick as previously used to make circles */
+    box-sizing: border-box;
+    width: 150px;
+    height: 150px;
+    padding: 80px 1em 0 1em;
+    /* We make room for the "ears" of our cloud */
+    margin: 50px 50px -50px;
+    position: relative;
+    background-color: var(--infographic-color);
+    /* Well, actually we are not making a full circle
+           as we want the bottom of our cloud to be flat.
+           Feel free to tweak this example to make a cloud
+           that isn't flat at the bottom ;) */
+    border-radius: 100% 100% 0 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+    .infographic {
+        margin: 20px auto -20px;
+        transform: scale(0.8);
+        transition: all .5s;
+    }
+}
+
+
+/* Those are common style that apply to both our ::before
+         and ::after pseudo elements. */
+
+.infographic::before,
+.infographic::after {
+    /* This is required to be allowed to display the
+           pseudo-elements, event if the value is an empty
+           string */
+    content: '';
+    /* We position our pseudo-elements on the left and
+           right sides of the box, but always at the bottom */
+    position: absolute;
+    bottom: 0;
+    /* This makes sure our pseudo-elements will be below
+           the box content whatever happens. */
+    z-index: -1;
+    background-color: var(--infographic-color);
+    border-radius: 100%;
+}
+
+.infographic::before {
+    /* This is the  size of the clouds left ear */
+    width: 125px;
+    height: 125px;
+    /* We slightly move it to the left */
+    left: -80px;
+    /* To make sure that the bottom of the cloud
+           remains flat, we must make the bottom right
+           corner of the left ear square. */
+    border-bottom-right-radius: 0;
+    transition: all .6s;
+}
+
+.infographic::after {
+    /* This is the size of the clouds right ear */
+    width: 100px;
+    height: 100px;
+    /* We slightly move it to the right */
+    right: -60px;
+    /* To make sure that the bottom of the cloud
+           remains flat, we must make the bottom left
+           corner of the right ear square. */
+    border-bottom-left-radius: 0;
+    transition: all .6s;
+}
+
+.infographic:hover {
+    background-color: rgb(250, 250, 58);
+    box-shadow: 0 0 30px;
+    border-radius: 50%;
+    color: black;
+    cursor: grab;
+    transition: all .6s;
+}
+
+.infographic:hover article2 {
+    transition: all .6s;
+    margin-bottom: 100px;
+}
+
+.infographic:hover::after {
+    transform: scale(0);
+    transition: all .6s;
+}
+
+.infographic:hover::before {
+    transform: scale(0);
+    transition: all .6s;
+}
+
+.infographic article {
+    color: var(--color);
+    font-size: 22px;
+    position: absolute;
+    margin: -115px -78px;
+}
+
+.infographic article2 {
+    font-size: 22px;
+    position: absolute;
+    margin: -15px -35px;
+}
+
 @media (min-width: 460px) {
     .lead__heading {
         font-size: 55px
@@ -205,7 +348,7 @@ body {
         left: 0;
         right: 0;
         visibility: hidden;
-        height:auto;
+        height: auto;
         width: 100%;
         position: fixed;
         z-index: -10;
