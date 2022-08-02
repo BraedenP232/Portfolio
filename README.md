@@ -1,19 +1,17 @@
-# Built off the Riyu theme and customized by Braeden Pelletier
-
 <div id="top"></div>
 
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
+<div style="align: center;">
   <a href="https://github.com/BraedenP232/Portfolio">
     <img src="img/cat.png" alt="Cat Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Braeden Pelletier's Portfolio</h3>
+  <h3 style="align: center;">Braeden Pelletier's Portfolio</h3>
 
-  <p align="center">
-    A brief summary of what I have to offer
+  <p style="align: center;">
+  TODO
     <br />
   </p>
 </div>
