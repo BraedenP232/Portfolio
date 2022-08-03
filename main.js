@@ -1,8 +1,10 @@
+// Imports
+
 import './style.css';
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.module.min.js';
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three-orbitcontrols@2.110.3/OrbitControls.min.js';
 
-// Setup
+// Setup 
 
 const scene = new THREE.Scene();
 
